@@ -1,0 +1,49 @@
+<h1>新規投稿ページ</h1>
+<h3>項目を選択</h3>
+<%= form_for @post do |f| %>
+<div class="field">
+    <%= f.label :title_cont, 'タイトル' %>
+    <%= f.text_field :title, :size => 140 %>
+</div>
+<div class="field">
+    <%= f.label :media_cont, 'メディア' %>
+    <%= f.text_field :media, :size => 140 %>
+</div>
+<div class="field">
+    <%= f.label :actor_cont, '俳優' %>
+    <%= f.text_field :actor, :size => 140 %>
+</div>
+<div class="field">
+    <%= f.label :genre_cont, 'ジャンル' %>
+    <%= f.text_field :genre, :size => 140 %>
+</div>
+<div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  <h5>総合評価</h5>
+  <div class="post_form">
+   <%= f.radio_button :overall, 5 ,id: 'star1'%>
+   <label for="star1"><span class="text">最高</span>★</label>
+
+   <%= f.radio_button :overall, 4 ,id: 'star2'%>
+   <label for="star2"><span class="text">良い</span>★</label>
+
+   <%= f.radio_button :overall, 3 ,id: 'star3'%>
+   <label for="star3"><span class="text">普通</span>★</label>
+
+   <%= f.radio_button :overall, 2 ,id: 'star4'%>
+   <label for="star4"><span class="text">悪い</span>★</label>
+
+   <%= f.radio_button :overall, 1 ,id: 'star5'%>
+   <label for="star5"><span class="text">最悪</span>★</label>
+</div>
+<div class="field">
+    <%= f.label :comment, 'コメント' %>
+    <%= f.text_field :comment, :size => 300 %>
+
+  <%= f.submit "投稿する" %>
+<% end %>
+<%= link_to "Reseach一覧に戻る", posts_path %>
+<%= link_to "ログイン", posts_path %>
+<%= link_to "新規登録", new_user_registration_path %>

@@ -1,0 +1,22 @@
+<h1>Find Media Site</h1>
+<%= link_to "新規投稿へ", new_post_path %>
+<%= link_to "Reseach Spaceに戻る", posts_path %>
+<h3>Research結果<h3>
+
+
+<div
+ class="posts-container">
+  <% @results.each do |t| %>
+    <div class="post">
+    <%= image_tag t.image_url, size: "250x200" if t.image? %>    
+    <%= t.user.email %>
+      <%= t.title %>
+      <%= t.media %>
+      <%= t.actor %>
+      <%= t.genre %>
+      <%= link_to "詳細へ", post_path(t.id) %>
+      <%= link_to "編集する", edit_post_path(t.id) %>
+      <%= link_to "削除する", post_path(t.id), method: :delete %>
+    </div>   
+  <% end %>
+</div>
