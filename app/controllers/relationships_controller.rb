@@ -1,6 +1,7 @@
 class RelationshipsController < ApplicationController
     before_action :set_user
-
+    
+   
     def create
       following = current_user.follow(@user)
       if following.save

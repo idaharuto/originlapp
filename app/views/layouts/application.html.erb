@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Idatwitter</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FMS(Find Media Site)</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1>FMS(Find Media Site)</h1>
+      <div class="header-list">
+      <ul>
+        <a href="#"><u><li><%= link_to "新規投稿へ", new_post_path %></li></u></a>
+        
+        <a href="#"><u><li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li></u></a>
+        <a href="#"><u><li><%= link_to "Reseach一覧に戻る", posts_path %></li></u></a>
+      </ul>
+      </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+     <p>Copyright © GeekSalon All Rights Reserved.</p>
+    </footer>
   </body>
 </html>

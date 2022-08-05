@@ -1,50 +1,70 @@
-<h1>Find Media Site</h1>
-<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
-<%= link_to "新規投稿へ", new_post_path %>
-<br>
-<%= page_entries_info @posts %>
-<%= link_to "マイページへ", user_path(current_user.id) %>
-<h1>作品検索</h1>
-<%= search_form_for @q, url: search_posts_path do |f| %>
-  <%= f.label :title_cont, 'タイトル' %>
-  <%= f.search_field :title_cont %>
-  <%= f.label :media_cont, 'メディア' %>
-  <%= f.search_field :media_cont %>
-  <%= f.label :actor_cont, '俳優' %>
-  <%= f.search_field :actor_cont %>
-  <%= f.label :genre_cont, 'ジャンル' %>
-  <%= f.search_field :genre_cont %>
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
-<h3>Research一覧</h3>
-<div class="posts-container">
-  <% @posts.each do |t| %>
-    <div class="post">
-    <%= image_tag t.image_url, size: "250x200" if t.image? %>
-    <%= t.user.email %>
-      <%= t.title %>
-      <%= t.media %>
-      <%= t.actor %>
-      <%= t.genre %>
-      <%= t.created_at %>
-      <%= link_to "詳細へ", post_path(t.id) %>
-      <%= link_to "編集する", edit_post_path(t.id) %>
-      <%= link_to "削除する", post_path(t.id), method: :delete %>
-    </div>
 
-    <% if user_signed_in? %>
-    <%= link_to "マイページへ", user_path(t.user_id) %>
-<% end %>
-    <div>
-    <h2>総合評価：
-    <span class="star-rating">
-       <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
-       <span class="star-rating-back">★★★★★</span>
-    </span> 
-    </h2>
-    </div>
-  <% end %>
+<div class="parent">
 
-  <%= paginate(@posts) %>
 
+  <%= search_form_for @q, url: search_posts_path do |f| %>
+  
+
+  <p>
+  <div class="field">
+    <font face="Comic Sans MS">title</font>
+    <%= f.search_field :title_cont %>
+    <br>
+    
+    
+    <font face="Comic Sans MS">media</font>
+    <%= f.search_field :media_cont %>
+    <br>
+    
+    <font face="Comic Sans MS">actor</font>
+    <%= f.search_field :actor_cont %>
+    <br>
+
+    <font face="Comic Sans MS">genre</font>
+    <%= f.search_field :genre_cont %>
+
+    <br>
+    <div class="kensaku">
+      <%= f.submit '検索' %>
+      <% end %>
+    </div>  
+  </div>
+
+      <div class="posts-container">
+        <% @posts.each do |t| %>
+        <p>
+        <div class="left-container">
+          <%= image_tag t.image_url, size: "250x200" if t.image? %>
+          <br>
+          <%= t.title %>
+          <br>
+          <hr>
+          <%= t.media %>
+          <br>
+          <hr>
+          <%= t.actor %>
+          <br>
+          <hr>
+          <%= t.genre %>
+          <br>
+          <hr>
+          <h3>総合評価：
+          <span class="star-rating">
+          <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
+          <span class="star-rating-back">★★★★★</span>
+          </span> 
+          </h3>
+          <%= link_to "詳細へ", post_path(t.id) %>
+          <br>
+            <%= t.user.email %>
+            <% if user_signed_in? %>
+            <%= link_to "マイページへ", user_path(t.user_id) %>
+            
+            <% end %>
+          
+          </div> 
+      <% end %>
+        <div class="page">
+            <%= paginate(@posts) %>
+          </div>
+</div>

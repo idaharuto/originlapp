@@ -1,0 +1,251 @@
+
+.parent{
+    display: flex; 
+    background-image:url("あお3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.field{
+    width: 100%;
+    line-height:80px;
+    font-size:30px;
+    flex-direction: column;
+    margin: 80px 50px
+}
+
+.posts-container {
+  width: 50%;
+  display: flex;
+  margin: 60px 40px;
+  
+}
+
+
+
+  h3 {
+    width: 300px;
+  }
+  
+  
+  .left-container {
+    margin: 0px 0px 0px 100px;
+  }
+ 
+  .kensaku{
+    text-align:center 
+  }
+
+  .page{
+    width: 300px
+  }
+
+
+
+
+
+
+
+
+
+.sinki{
+  display: flex;
+  background-image:url("あお3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.haruto{
+  width: 100%;
+  line-height:80px;
+  font-size:30px;
+  flex-direction: column;
+  margin: 10px 50px;
+}
+
+
+.hosi{
+  width: 50%;
+  line-height:65px;
+  margin: 80px 150px;
+}
+
+.takuto{
+  border: solid 3px;
+}
+
+
+
+
+
+
+
+.takumi{
+  width: 50%;
+  margin: 200px;
+  line-height:25px;
+}
+
+.abc{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
+
+.mypage{
+  display: flex;
+  background-image:url("あお3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+.namae{
+  display: flex;
+  width: 50%;
+  line-height:80px;
+  font-size:20px;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+
+.post{
+  width: 50%;
+  float: right;
+}
+
+
+
+
+
+
+
+
+
+
+.logins {
+  padding: 20px;              /* 余白指定 */
+  
+  height: 100vh;              /* 高さ指定 */
+  background-image:url("ログイン新作.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.mailroom{
+  
+  width: 200px;               /* 幅指定 */
+  height: 50px;               /* 高さ指定 */
+  margin:100px 500px;            /* 中央寄せ */
+}
+.actions{
+  text-align:center 
+}
+
+
+
+
+
+
+
+.kekka{
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  margin: 0px 110px;
+  line-height:25px;
+}
+.eiga{
+  margin: 40px 0px 0px 70px;
+  border: solid 4px #febffa;
+  border-radius: 10px;
+}
+
+hr{
+  border-top: 5px double;
+}
+.souiti{
+  background-image:url("あお3.jpg");
+  background-size: cover;
+}
+
+
+
+
+.henshuu{
+  width: 50%;
+  line-height:65px;
+  margin: 50px 150px;
+}
+
+.minao{
+  width: 100%;
+  line-height:80px;
+  font-size:30px;
+  flex-direction: column;
+  margin: 50px 30px;
+}
+
+
+
+
+
+
+
+
+.shousai{
+  display: flex; 
+  background-image:url("あお3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.kuniyasu{
+  width: 50%;
+  line-height:60px;
+  font-size:20px;
+  flex-direction: column;
+  margin: 50px 50px
+}
+
+.comment-wrapper{
+  width: 50%;
+  line-height:60px;
+  font-size:20px;
+  flex-direction: column;
+  margin: 50px 50px
+  }
+
+  textarea{
+    resize: none;
+    width:300px;
+    height:100px
+  }
+
+
+
+  input[type="text"]:focus {
+    outline: solid 5px rgb(242, 252, 103);
+  }
+  
+  h2{
+    width: 300px;
+  }
+
+  a {
+    box-shadow: 0 0 5px 0 rgba(243, 34, 243, 0.12), 0 2px 3px 0 rgba(0,0,0,.22);
+    transition: .3s;
+  }
+  a:hover {
+    box-shadow: 0 15px 30px -5px rgba(244, 82, 82, 0.15), 0 0 5px rgba(0,0,0,.1);
+    transform: translateY(-10px);
+  }

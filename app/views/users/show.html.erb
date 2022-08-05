@@ -1,24 +1,45 @@
-<h1>マイページ</h1>
-<p>名前 : <%= @user.name %></p>
-<p>メールアドレス : <%= @user.email %></p>
-<p>プロフィール : <%= @user.profile %></p>
-<%= render 'relationships/follow_button', user: @user %>
 
-<% if current_user.id == @user.id %>
-  <%= link_to "編集する", edit_user_registration_path %>
-<% end %>
+<div class="mypage">
 
-<h2>ユーザーの投稿一覧</h2>
-<% @user.posts.each do |t| %>
-  <div class="post">
-    <%= image_tag t.image_url, size: "250x200" if t.image? %>
-  <%= t.title %>
-  <%= t.media %>
-  <%= t.actor %>
-  <%= t.genre %>
-<% end %>
-<div>
+  
 
+  <div class="namae">
+    <h4>マイページ</h4>
+    <p>名前 : <%= @user.name %></p>
+    <p>メールアドレス : <%= @user.email %></p>
+    <p>プロフィール : <%= @user.profile %></p>
+    <%= render 'relationships/follow_button', user: @user %>
 
-<%= link_to "Reaserch一覧に戻る", posts_path %>
+    <% if current_user.id == @user.id %>
+    <%= link_to "編集する", edit_user_registration_path %>
+    <% end %>
+  </div>
 
+    <div class="takumi">
+      
+      <div class = "title">
+      <h4>ユーザーの投稿一覧</h4>
+      </div>
+      
+      <div class = "abc">
+      <% @user.posts.each do |t| %>
+      <div class="itiran">
+        <%= image_tag t.image_url, size: "170x120" if t.image? %>
+          <br>
+          <%= t.title %>
+          <br>
+          <hr>
+          <%= t.media %>
+          <br>
+          <hr>
+          <%= t.actor %>
+          <br>
+          <hr>
+          <%= t.genre %>
+          <hr>
+      </div>
+      <% end %>
+      </div>
+    </div>    
+
+</div>

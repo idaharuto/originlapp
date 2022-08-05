@@ -1,20 +1,49 @@
-<%= form_for @post do |f| %>
-    <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title, :size => 140 %>
+<div class="sinki">
+
+    <div class="minao">
+      <%= form_for @post do |f| %>
+      <font face="Comic Sans MS">title</font>
+      <%= f.text_field :title, :size => 50 %>
+      <br>
+      <font face="Comic Sans MS">media</font>
+      <%= f.text_field :media, :size => 50 %>
+      <br>
+      <font face="Comic Sans MS">actor</font>
+      <%= f.text_field :actor, :size => 50 %> 
+      <br>
+      <font face="Comic Sans MS">genre</font>
+      <%= f.text_field :genre, :size => 50 %> 
+      <br>
     </div>
-    <div class="field">
-    <%= f.label :media %>
-    <%= f.text_field :media, :size => 140 %>
-    </div>
-    <div class="field">
-    <%= f.label :actor %>
-    <%= f.text_field :actor, :size => 140 %> 
-    </div>
-    <div class="field">
-    <%= f.label :genre %>
-    <%= f.text_field :genre, :size => 140 %> 
-    </div>
-    <%= f.submit "編集する" %>
+      <div class="henshuu">
+        <h4>総合評価</h4>
+        <%= f.radio_button :overall, 5 ,id: 'star1'%>
+        <label for="star1"><span class="text">最高</span>★</label>
+
+        <%= f.radio_button :overall, 4 ,id: 'star2'%>
+        <label for="star2"><span class="text">良い</span>★</label>
+
+        <%= f.radio_button :overall, 3 ,id: 'star3'%>
+        <label for="star3"><span class="text">普通</span>★</label>
+
+        <%= f.radio_button :overall, 2 ,id: 'star4'%>
+        <label for="star4"><span class="text">悪い</span>★</label>
+
+        <%= f.radio_button :overall, 1 ,id: 'star5'%>
+        <label for="star5"><span class="text">最悪</span>★</label>
+        <br>
+    
+        <%= f.label :comment, '一言' %>
+        <br>
+        <%= f.text_field :comment, :size => 50 %>
+        <br>
+        <font face="Comic Sans MS">image</font>
+        <%= f.file_field :image %>
+        <br>
+          <div class="kensaku">
+            <%= f.submit "編集する" %>  
+          </div>
+      </div>
     
   <% end %>
+</div> 

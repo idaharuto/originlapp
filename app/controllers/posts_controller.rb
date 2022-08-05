@@ -3,11 +3,14 @@ class PostsController < ApplicationController
     before_action :authenticate_user!
     def index
       if params[:search] == nil
-          @posts= Post.all.page(params[:page]).per(3)
+          @posts= Post.all.page(params[:page]).per(2)
       elsif params[:search] == ''
           @posts= Post.all.page(params[:page]).per(3)
-      
+        else
+          #部分検索
+          @posts = Post.where("body LIKE ? ",'%' + params[:search] + '%').page(params[:page]).per(3)
       end
+      
   end
     def new
         @post = Post.new
